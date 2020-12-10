@@ -7,7 +7,9 @@ session = InstaPy(username='', password='', headless_browser=True)
 # let's go! :>
 with smart_run(session):
     session.like_by_feed(amount=50, randomize=False, unfollow=False, interact=False)
-    session.set_do_story(percentage=100, enabled=True)
+    following_list = session.grab_following(username="", amount="full", live_match=True, store_locally=True)
+    session.set_do_story(percentage=70, enabled=True, simulate=True)
+    session.story_by_users(following_list)
     session.set_delimit_liking(enabled=True, max_likes=150, min_likes=0)
     session.set_delimit_commenting(enabled=True, max_comments=4, min_comments=0)
     session.set_relationship_bounds(enabled=True,
