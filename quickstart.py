@@ -50,6 +50,6 @@ with smart_run(session):
                            unfollow_after=48 * 60 * 60,
                            sleep_delay=503)
     session.like_by_tags(['forex','forexsignals','forexsignal','heavypips'], amount=50)
-    session.join_pods(topic='sports', engagement_mode='no_comments')
+    session.join_pods(topic='general', engagement_mode='no_comments')
 
 
